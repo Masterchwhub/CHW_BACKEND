@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import axios from "axios";
 
+
 export const validateToken = async (req: any, res: Response) => {
     try {
         // If the token is valid, make a request to the external API
