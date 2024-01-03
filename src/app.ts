@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import loginRouter from './routes/login/login.routes';
 import { authenticateMiddleware } from './middleware/authenticate'; // Ajusta la ruta según tu estructura de carpetas
+import 'dotenv/config';
 
 const app = express();
 

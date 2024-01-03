@@ -17,9 +17,9 @@ export const authenticateMiddleware = (req: AuthenticatedRequest, res: Response,
 
   try {
     // Verificar y decodificar el token
-    const decoded = jwt.verify(token, 'tu_secreto_secreto'); // Reemplaza 'tu_secreto_secreto' con tu secreto real
-
-    // Puedes hacer más validaciones aquí según tus necesidades
+    const jwtSecret = process.env.JWT_SECRET || 'default_secret';
+const decoded = jwt.verify(token, jwtSecret);
+ // Puedes hacer más validaciones aquí según tus necesidades
     // Por ejemplo, verificar la expiración, el emisor, etc.
 
     // Adjunta la información del usuario decodificada al objeto de solicitud para que esté disponible en las rutas protegidas
